@@ -1,5 +1,5 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React from 'react'
+import { useState,useEffect } from 'react';
 
 const LeaderBoard = () => {
   const [userData, setUserData] = useState();
@@ -70,10 +70,10 @@ const LeaderBoard = () => {
       </thead>
 
       <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
-        {userData?.map((person, index) => (
+        {userData?.map((person,index) => (
           <tr key={person.UID}>
             <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
-              {index + 1}
+              {index+1}
             </td>
             <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
               {person.UID}
@@ -86,7 +86,7 @@ const LeaderBoard = () => {
               {person.Score}
             </td>
             <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
-              {"+" + person.Country}
+              {"+"+person.Country}
             </td>
             <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
               {person.TimeStamp}
@@ -95,7 +95,6 @@ const LeaderBoard = () => {
         ))}
       </tbody>
     </table>
-  );
-};
+)}
 
 export default LeaderBoard;
