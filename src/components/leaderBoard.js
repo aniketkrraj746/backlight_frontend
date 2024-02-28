@@ -70,10 +70,10 @@ const LeaderBoard = () => {
       </thead>
 
       <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
-        {userData?.map((person,index) => (
+        {userData?.map((person, index) => (
           <tr key={person.UID}>
             <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
-              {index+1}
+              {index + 1}
             </td>
             <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
               {person.UID}
@@ -86,15 +86,19 @@ const LeaderBoard = () => {
               {person.Score}
             </td>
             <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
-              {"+"+person.Country}
+              {"+" + person.Country}
             </td>
             <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
-              {person.TimeStamp}
+              {new Date(person.TimeStamp).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
             </td>
           </tr>
         ))}
       </tbody>
     </table>
-)}
+  );}
 
 export default LeaderBoard;

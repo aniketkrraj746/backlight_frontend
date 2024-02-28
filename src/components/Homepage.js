@@ -6,7 +6,7 @@ const LeaderBoard = () => {
   const getAllData = async () => {
     try {
       const getUsers = await fetch(
-        `${process.env.REACT_APP_BASE_URL}/api/v1/current_week_leaderboard`,
+        `${process.env.REACT_APP_BASE_URL}/allData`,
         {
           method: "GET",
           headers: {
@@ -89,7 +89,15 @@ const LeaderBoard = () => {
               {"+" + person.Country}
             </td>
             <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
-              {person.TimeStamp}
+              
+              { new Date(person.TimeStamp).toLocaleDateString('en-US',{
+                year: 'numeric', 
+                month: 'short',  
+                day: 'numeric'
+              })}
+            
+              
+              
             </td>
           </tr>
         ))}
