@@ -41,10 +41,10 @@ const Navbar = () => {
     setShowModal(true);
     // navigate("/getUser");
   };
-  useEffect(() => {
-    // const userId="3";
-    getUser();
-  }, []);
+  // useEffect(() => {
+  //   // const userId="3";
+  //   getUser();
+  // }, []);
   // console.log(user);
   // if(user===undefined) return <h2>Loading User Info..</h2>;
   //  else
