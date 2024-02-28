@@ -8,7 +8,7 @@ const Searchbox = () => {
 
   const handleClick = () => {
     setShowModal(false);
-    // navigate("/");
+
   };
 
   const { register, handleSubmit } = useForm();
@@ -20,7 +20,6 @@ const Searchbox = () => {
          const answer = await fetch(
            `${process.env.REACT_APP_BASE_URL}/api/v1/UserId`,
            {
-             // mode: "*",
              mode: "cors",
              method: "POST",
              headers: {
@@ -39,8 +38,6 @@ const Searchbox = () => {
          console.log(error);
          alert("Error in fetching data");
        }
-      //  setShowModal(true);
-       // navigate("/getUser");
      }
    };
   return (
@@ -57,8 +54,7 @@ const Searchbox = () => {
             name="userId"
             placeholder="Search User"
             {...register("userId")}
-            // ref={register({ required: true })}
-            // required
+            required
           ></input>
           <button
             type="submit"

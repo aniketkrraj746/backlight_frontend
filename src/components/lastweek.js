@@ -1,7 +1,7 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-// import { Await } from "react-router-dom";
+
 
 const LaskWeek = () => {
   const {register,handleSubmit}=useForm();
@@ -24,16 +24,13 @@ const LaskWeek = () => {
       console.log(getUsers);
       const res = await getUsers.json();
       setlastWeekData(res);
-      // setLoading(false);
+
       
     } catch (error) {
       console.log("error",error);
       setLoading(false);
     }
   };
-  // useEffect(() => {
-  //   LaskWeekLeaderBoard();
-  // }, []);
   console.log(lastWeekData);
   return (
     <div>
