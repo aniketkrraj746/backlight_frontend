@@ -13,13 +13,14 @@ const LaskWeek = () => {
       const getUsers = await fetch(
         `${process.env.REACT_APP_BASE_URL}/api/v1/last_week_leaderboard`,
         {
+          mode: "cors",
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ ...data }),
         }
-      ).then(setLoading(false))
+      ).then(setLoading(false));
       console.log("form Response", getUsers);
       console.log(getUsers);
       const res = await getUsers.json();
