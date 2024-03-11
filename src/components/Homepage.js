@@ -18,8 +18,9 @@ const LeaderBoard = () => {
       );
       // console.log(getUsers);
       const res = await getUsers.json();
-      const  sortedByScore = res.sort((a, b) => b.Score - a.Score);
-      setUserData(sortedByScore);
+      // const  sortedByScore = res.sort((a, b) => b.Score - a.Score);
+      // setUserData(sortedByScore);
+      setUserData(res);
     } catch (error) {
       console.log(error);
     }
@@ -95,7 +96,7 @@ const LeaderBoard = () => {
                 {"+" + person.Country}
               </td>
               <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
-                {new Date(person.TimeStamp).toLocaleDateString("en-US", {
+                {new Date(person.Timestamp).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "short",
                   day: "numeric",
